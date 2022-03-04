@@ -10,7 +10,7 @@ inputs:
     required: true
   mode:
     description: 'add configuration to existing file distribution (add) - replace existing (replace) - apply only if none is present (if_not_present)'
-  device_group:
+  device_or_group_id:
     description: 'id of the group or device for which the configuration should be applied - default: root (all devices)'
     required: false
     default: 'root'
@@ -25,5 +25,5 @@ runs:
     - ${{ inputs.token }}
     - ${{ inputs.config_file }}
     - ${{ inputs.mode }}
-    - ${{ inputs.device_group }}
+    - ${{ inputs.device_or_group_id }}
     - ${{ inputs.commit_message }}
